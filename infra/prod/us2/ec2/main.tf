@@ -8,5 +8,5 @@ provider "aws" {
 
 resource "aws_instance" "web_app" {
   ami           = "ami-674cbc1e"
-  instance_type = "t3.xlarge"
+  instance_type = "t3.2xlarge"
 }
