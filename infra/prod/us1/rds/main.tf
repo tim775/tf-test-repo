@@ -11,5 +11,6 @@ resource "aws_db_instance" "mysql" {
   instance_class = "db.t3.2xlarge"
   tags = {
     To = "me"
+    tagkey = "something"
   }
 }
