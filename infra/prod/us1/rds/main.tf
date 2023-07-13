@@ -9,8 +9,4 @@ provider "aws" {
 resource "aws_db_instance" "mysql" {
   engine         = "mysql"
   instance_class = "db.t3.xlarge"
-  tags = {
-    To = "me"
-    tagkey = "something"
-  }
 }
