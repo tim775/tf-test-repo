@@ -13,7 +13,6 @@ resource "aws_instance" "web_app" {
   tags = {
     "bat"  = "ball"
     "fizz" = "buzz"
-    "ef" = "fe"
   }
 
   root_block_device {
