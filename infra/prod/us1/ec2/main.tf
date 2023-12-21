@@ -10,3 +10,8 @@ resource "aws_instance" "web_app2" {
   ami           = "ami-674cbc1e"
   instance_type = "t3.xlarge"
 }
+
+resource "aws_ebs_volume" "gp2_default" {
+  availability_zone = "us-east-1a"
+  size              = 10
+}
