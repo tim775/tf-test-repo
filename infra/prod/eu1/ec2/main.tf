@@ -37,7 +37,7 @@ resource "aws_instance" "web_app7" {
 
   root_block_device {
     volume_size = 50
-    volume_type = "gp2"
+    volume_type = "gp3"
     tags = {
       "ef" = "rbd"
     }
