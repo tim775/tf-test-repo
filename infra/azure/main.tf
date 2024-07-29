@@ -48,7 +48,7 @@ resource "azurerm_storage_account" "new_passing" {
 }
 
 resource "azurerm_storage_management_policy" "new_passing" {
-  storage_account_id = azurerm_storage_account.existing_passing.id
+  storage_account_id = azurerm_storage_account.new_passing.id
 }
 
 
