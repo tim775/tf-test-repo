@@ -32,5 +32,10 @@ resource "azurerm_storage_account" "existing_failing" {
   account_replication_type = "LRS"
   account_tier             = "Standard"
   blob_properties {
+    last_access_time_enabled = true
   }
+}
+
+resource "azurerm_storage_management_policy" "existing_failing" {
+  storage_account_id = azurerm_storage_account.existing_failing.id
 }
