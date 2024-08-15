@@ -44,3 +44,94 @@ resource "aws_instance" "web_app7" {
   }
 }
 
+
+resource "aws_subnet" "one_gateway" {
+  vpc_id     = "subnet-12345678"
+  cidr_block = "10.0.1.0/24"
+}
+
+resource "aws_nat_gateway" "passing_1" {
+  allocation_id = "eip-12345678"
+  subnet_id     = aws_subnet.one_gateway.id
+}
+
+resource "aws_subnet" "two_gateways" {
+  vpc_id     = "subnet-22345678"
+  cidr_block = "10.0.1.0/24"
+}
+
+resource "aws_nat_gateway" "failing_1" {
+  allocation_id = "eip-22345678"
+  subnet_id     = aws_subnet.two_gateways.id
+}
+
+resource "aws_nat_gateway" "failing_2" {
+  allocation_id = "eip-32345678"
+  subnet_id     = aws_subnet.two_gateways.id
+}
+
+
+resource "aws_vpc" "one_endpoint" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
+}
+
+resource "aws_vpc_endpoint" "passing_1_one_endpoint" {
+  service_name      = "com.amazonaws.region.ec2"
+  vpc_id            = aws_vpc.one_endpoint.id
+  vpc_endpoint_type = "Interface"
+}
+
+resource "aws_vpc" "different_service_endpoints" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
+}
+
+resource "aws_vpc_endpoint" "passing_2_different_service_endpoints" {
+  service_name      = "com.amazonaws.region.ec2"
+  vpc_id            = aws_vpc.different_service_endpoints.id
+  vpc_endpoint_type = "Interface"
+}
+
+resource "aws_vpc_endpoint" "passing_3_different_service_endpoints" {
+  service_name      = "com.amazonaws.region.s3"
+  vpc_id            = aws_vpc.different_service_endpoints.id
+  vpc_endpoint_type = "Interface"
+}
+
+
+resource "aws_vpc" "two_interface_endpoints" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
+}
+
+resource "aws_vpc_endpoint" "failing_1_two_interface_endpoints" {
+  service_name      = "com.amazonaws.region.ec2"
+  vpc_id            = aws_vpc.two_interface_endpoints.id
+  vpc_endpoint_type = "Interface"
+}
+
+resource "aws_vpc_endpoint" "failing_2_two_interface_endpoints" {
+  service_name      = "com.amazonaws.region.ec2"
+  vpc_id            = aws_vpc.two_interface_endpoints.id
+  vpc_endpoint_type = "Interface"
+}
+
+resource "aws_vpc" "two_endpoints_of_different_type" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "default"
+}
+
+resource "aws_vpc_endpoint" "failing_3_two_endpoints_of_different_type" {
+  service_name      = "com.amazonaws.region.ec2"
+  vpc_id            = aws_vpc.two_endpoints_of_different_type.id
+  vpc_endpoint_type = "Interface"
+}
+
+resource "aws_vpc_endpoint" "failing_4_two_endpoints_of_different_type" {
+  service_name      = "com.amazonaws.region.ec2"
+  vpc_id            = aws_vpc.two_endpoints_of_different_type.id
+  vpc_endpoint_type = "GatewayLoadBalancer"
+}
+
+
