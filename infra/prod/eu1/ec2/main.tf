@@ -160,4 +160,9 @@ resource "aws_vpc_endpoint" "failing_6_make_it_worse_two_endpoints_of_different_
   vpc_endpoint_type = "GatewayLoadBalancer"
 }
 
+resource "aws_vpc_endpoint" "failing_7_make_it_worse_two_endpoints_of_different_type" {
+  service_name      = "com.amazonaws.region.ec2"
+  vpc_id            = aws_vpc.two_endpoints_of_different_type.id
+  vpc_endpoint_type = "GatewayLoadBalancer"
+}
 
