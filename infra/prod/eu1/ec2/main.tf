@@ -75,6 +75,11 @@ resource "aws_nat_gateway" "failing_2" {
   subnet_id     = aws_subnet.two_gateways.id
 }
 
+resource "aws_nat_gateway" "failing_3" {
+  allocation_id = "eip-22345678"
+  subnet_id     = aws_subnet.two_gateways.id
+}
+
 resource "aws_vpc" "one_endpoint" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
