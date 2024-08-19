@@ -143,19 +143,19 @@ resource "aws_vpc_endpoint" "failing_3_two_endpoints_of_different_type" {
 }
 
 resource "aws_vpc_endpoint" "failing_4_two_endpoints_of_different_type" {
-  service_name      = "com.amazonaws.region.ec2"
+  service_name      = "com.amazonaws.region.ec3"
   vpc_id            = aws_vpc.two_endpoints_of_different_type.id
   vpc_endpoint_type = "GatewayLoadBalancer"
 }
 
 resource "aws_vpc_endpoint" "failing_5_make_it_worse_two_endpoints_of_different_type" {
-  service_name      = "com.amazonaws.region.ec2"
+  service_name      = "com.amazonaws.region.ec4"
   vpc_id            = aws_vpc.two_endpoints_of_different_type.id
   vpc_endpoint_type = "GatewayLoadBalancer"
 }
 
 resource "aws_vpc_endpoint" "failing_6_make_it_worse_two_endpoints_of_different_type" {
-  service_name      = "com.amazonaws.region.ec2"
+  service_name      = "com.amazonaws.region.ec5"
   vpc_id            = aws_vpc.two_endpoints_of_different_type.id
   vpc_endpoint_type = "GatewayLoadBalancer"
 }
