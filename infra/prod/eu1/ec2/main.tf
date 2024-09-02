@@ -25,7 +25,7 @@ resource "aws_instance" "web_app" {
   }
 }
 
-resource "aws_instance" "web_appt2" {
+resource "aws_instance" "web_appt2222" {
   ami           = "ami-674cbc1e"
   instance_type = "t2.medium"
 
