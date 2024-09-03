@@ -49,7 +49,7 @@ resource "aws_instance" "web_app7" {
   instance_type = "t3.xlarge"
 
   tags = {
-    "bat"  = "ball"
+    "bat"  = "ballaaa"
     "fizz" = "buzz"
     "ef" = "rbd"
   }
