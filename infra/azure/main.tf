@@ -3,6 +3,11 @@ provider "azurerm" {
   features {}
 }
 
+module "database_tier" {
+  for_each = var.clusters
+  source   = "../../.github/actions/devops/terraform/modules/rds-aurora"
+}
+
 resource "azurerm_resource_group" "arg" {
   name     = "arg"
   location = "westus"
