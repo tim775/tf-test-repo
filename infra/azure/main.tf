@@ -56,6 +56,10 @@ resource "azurerm_linux_virtual_machine_scale_set" "failing_ds2_v2" {
     }
   }
 
+  tags = {
+    mustincludetagkey = ""
+  }
+
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
