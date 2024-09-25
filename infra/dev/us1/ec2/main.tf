@@ -44,6 +44,8 @@ resource "aws_instance" "web_app_new" {
 
 module "vpc" { 
 
+{{{{
+
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 2.0"
 
