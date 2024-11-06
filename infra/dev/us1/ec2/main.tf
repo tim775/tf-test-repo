@@ -6,6 +6,23 @@ provider "aws" {
   secret_key                  = "mock_secret_key"
 }
 
+resource "aws_instance" "web_app_g" {
+  ami           = "ami-674cbc1e"
+  instance_type = "g3.4xlarge"
+
+  tags = {
+    "bat"  = "ball"
+    "fizz" = "buzz"
+    "ef" = "rbd"
+  }
+
+  root_block_device {
+    volume_size = 50
+    tags = {
+      "ef" = "rbd"
+    }
+  }
+
 resource "aws_instance" "web_app" {
   ami           = "ami-674cbc1e"
   instance_type = "g3.4xlarge"
