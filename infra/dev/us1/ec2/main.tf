@@ -8,7 +8,7 @@ provider "aws" {
 
 resource "aws_instance" "web_app_g" {
   ami           = "ami-674cbc1e"
-  instance_type = "g3.4xlarge"
+  instance_type = "g5.xlarge"
 
   tags = {
     "bat"  = "ball"
