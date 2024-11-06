@@ -22,6 +22,7 @@ resource "aws_instance" "web_app_g" {
       "ef" = "rbd"
     }
   }
+}
 
 resource "aws_instance" "web_app" {
   ami           = "ami-674cbc1e"
