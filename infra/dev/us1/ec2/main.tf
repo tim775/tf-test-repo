@@ -30,7 +30,7 @@ resource "aws_db_instance" "aws_db_instance" {
 
 resource "aws_instance" "web_app" {
   ami           = "ami-674cbc1e"
-  instance_type = "m4.xlarge-true"
+  instance_type = "m4.xlarge"
 
   tags = {
     "bat"  = "ball"
@@ -66,5 +66,5 @@ resource "aws_instance" "web_app_new" {
 
 resource "aws_instance" "web_app_new2" {
   ami           = "ami-674cbc1e"
-  instance_type = "m4.xlarge-true"
+  instance_type = "m4.xlarge"
 }
