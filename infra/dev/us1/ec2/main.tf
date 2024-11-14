@@ -6,8 +6,6 @@ provider "aws" {
   secret_key                  = "mock_secret_key"
 }
 
-}
-
 resource "aws_db_instance" "aws_db_instance" {
   identifier                      = "provider-rds"
   allocated_storage               = 1000
