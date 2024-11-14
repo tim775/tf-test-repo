@@ -6,6 +6,8 @@ provider "aws" {
   secret_key                  = "mock_secret_key"
 }
 
+}
+
 resource "aws_db_instance" "aws_db_instance" {
   identifier                      = "provider-rds"
   allocated_storage               = 1000
@@ -30,7 +32,7 @@ resource "aws_db_instance" "aws_db_instance" {
 
 resource "aws_instance" "web_app" {
   ami           = "ami-674cbc1e"
-  instance_type = "t3.2xlarge"
+  instance_type = "m4.xlarge"
 
   tags = {
     "bat"  = "ball"
@@ -62,4 +64,9 @@ resource "aws_instance" "web_app_new" {
       "ef" = "rbd"
     }
   }
+}
+
+resource "aws_instance" "web_app_new2" {
+  ami           = "ami-674cbc1e"
+  instance_type = "m4.xlarge"
 }
