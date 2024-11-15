@@ -6,6 +6,8 @@ provider "aws" {
   secret_key                  = "mock_secret_key"
 }
 
+
+
 }
 
 resource "aws_db_instance" "aws_db_instance" {
