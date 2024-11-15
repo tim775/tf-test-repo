@@ -6,7 +6,17 @@ provider "aws" {
   secret_key                  = "mock_secret_key"
 }
 
-}}}}}
+module "notify_slack" {
+  source  = "terraform-aws-modules/zzzzzzzzzznotify-slack/aws"
+  version = "6.5.0"
+
+  sns_topic_name   = "topic_name"
+  create_sns_topic = false
+
+  slack_webhook_url = "https://wwww.webjhook.url"
+  slack_channel     = "production-dev"
+  slack_username    = "incoming-webhook"
+}
 
 resource "aws_db_instance" "aws_db_instance" {
   identifier                      = "provider-rds"
