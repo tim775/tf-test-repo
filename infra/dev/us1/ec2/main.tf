@@ -6,14 +6,12 @@ provider "aws" {
   secret_key                  = "mock_secret_key"
 }
 
-}
-
 resource "aws_db_instance" "aws_db_instance" {
   identifier                      = "provider-rds"
   allocated_storage               = 1000
   engine                          = "postgres"
   engine_version                  = "15"
-  instance_class                  = "db.m5.large"
+  instance_class                  = "db.m5.2xlarge"
   storage_type                    = "gp3"
   multi_az                        = true
   username                        = "var.db_username"
