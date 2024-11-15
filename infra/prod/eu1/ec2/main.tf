@@ -1,4 +1,4 @@
-{{provider "aws" {
+{provider "aws" {
   region                      = "eu-west-1"
   skip_credentials_validation = true
   skip_requesting_account_id  = true
@@ -8,7 +8,7 @@
 
 resource "aws_instance" "web_app" {
   ami           = "ami-674cbc1e"
-  instance_type = "t3.xlarge"
+  instance_type = "t3.2xlarge"
 
   tags = {
     "bat"  = "ball"
