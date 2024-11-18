@@ -24,7 +24,7 @@ resource "aws_db_instance" "aws_db_instance" {
   engine                          = "postgres"
   engine_version                  = "15"
   instance_class                  = "db.m5.2xlarge"
-  storage_type                    = "gp3"
+  storage_type                    = "gp2"
   multi_az                        = true
   username                        = "var.db_username"
   password                        = "aws_secretsmanager_secret_version.aws_secretsmanager_secret_version.secret_string"
