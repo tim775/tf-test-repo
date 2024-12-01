@@ -41,7 +41,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "failing_ds2_v2" {
   location            = "eastus"
   instances           = 3
 
-  sku            = "Standard_DS2_v2"
+  sku            = "Standard_D4S_v3"
   admin_username = "fakeuser"
   admin_password = "Password1234!"
 
