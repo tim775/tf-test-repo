@@ -7,7 +7,7 @@ provider "aws" {
 }
 
 module "notify_slack" {
-  source  = "terraform-aws-modules/zzzzxxxxzzzzzznotify-slack/aws"
+  source  = "terraform-aws-modules/notify-slack/aws"
   version = "6.5.0"
 
   sns_topic_name   = "topic_name"
@@ -48,6 +48,7 @@ resource "aws_instance" "web_app" {
     "bat"  = "ball"
     "fizz" = "buzz"
     "ef" = "rbd"
+    "n" = "fa"
   }
 
   root_block_device {
