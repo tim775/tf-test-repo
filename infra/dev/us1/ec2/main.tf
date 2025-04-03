@@ -48,7 +48,7 @@ resource "aws_instance" "web_app" {
     "bat"  = "ball"
     "fizz" = "buzz"
     "ef" = "rbd"
-    "n" = "fa222222"
+    "n" = "fa22222zzzzz2"
   }
 
   root_block_device {
