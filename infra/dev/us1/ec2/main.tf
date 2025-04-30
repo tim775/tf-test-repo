@@ -61,7 +61,7 @@ resource "aws_instance" "web_app" {
 
 resource "aws_instance" "web_app_new" {
   ami           = "ami-674cbc1e"
-  instance_type = "t3.large"
+  instance_type = "t3.xlarge"
 
   tags = {
     "bat"  = "ball"
