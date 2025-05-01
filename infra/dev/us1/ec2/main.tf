@@ -79,5 +79,5 @@ resource "aws_instance" "web_app_new" {
 
 resource "aws_instance" "web_app_new2" {
   ami           = "ami-674cbc1e"
-  instance_type = "m4.large"
+  instance_type = "m4.xlarge"
 }
