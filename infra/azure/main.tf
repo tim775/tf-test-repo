@@ -20,10 +20,6 @@ resource "azurerm_storage_account" "existing_passing" {
   }
 }
 
-resource "azurerm_storage_management_policy" "existing_passing" {
-  storage_account_id = azurerm_storage_account.existing_passing.id
-}
-
 resource "azurerm_storage_account" "existing_failing" {
   name                     = "existing_failing"
   resource_group_name      = azurerm_resource_group.arg.name
