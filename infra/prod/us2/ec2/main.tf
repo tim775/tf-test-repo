@@ -8,7 +8,7 @@ provider "aws" {
 
 resource "aws_instance" "web_apppp" {
   ami           = "ami-674cbc1e"
-  instance_type = "t3.2xlarge"
+  instance_type = "t3.xlarge"
   root_block_device {
     volume_size = 10
     volume_type = "gp3"
