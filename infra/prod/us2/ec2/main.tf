@@ -11,5 +11,6 @@ resource "aws_instance" "web_apppp" {
   instance_type = "t3.2xlarge"
   root_block_device {
     volume_size = 10
+    volume_type = "gp3"
   }
 }
