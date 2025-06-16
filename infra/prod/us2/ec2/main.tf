@@ -13,12 +13,3 @@ resource "aws_instance" "web_apppp" {
     volume_size = 10
   }
 }
-
-resource "aws_instance" "web_apppp2222" {
-  ami           = "ami-674cbc1e"
-  instance_type = "t4.62xlarge"
-  root_block_device {
-    volume_size = 10
-    volume_type = "gp3"
-  }
-}
