@@ -196,7 +196,7 @@ resource_type_default_usage:
     monthly_provisioned_efo_data_out_gb: 1538 # Monthly data egressed by the stream in GB to EFO consumers.
     monthly_provisioned_efo_consumer_hours: 1333 # Monthly hours of EFO consumer application usage.
   aws_lambda_function:
-    monthly_requests: 100000000 # Monthly requests to the Lambda function.
+    monthly_requests: 1000000000 # Monthly requests to the Lambda function.
     request_duration_ms: 100 # Average duration of each request in milliseconds.
   aws_lambda_provisioned_concurrency_config:
     monthly_duration_hrs: 53 # Number of hours in a month that provisioned concurrency will be enabled.
