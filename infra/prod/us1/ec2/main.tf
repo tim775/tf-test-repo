@@ -17,7 +17,7 @@ resource "aws_instance" "web_app" {
   }
 
   root_block_device {
-    volume_size = 50
+    volume_size = 51
     tags = {
       "ef" = "rbd"
     }
