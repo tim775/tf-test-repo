@@ -6,7 +6,7 @@ provider "aws" {
   secret_key                  = "mock_secret_key"
 }
 
-resource "aws_instance" "web_app" {
+resource "aws_instance" "web_app2" {
   ami           = "ami-674cbc1e"
   instance_type = "t3.2xlarge"
 
@@ -31,4 +31,9 @@ resource "aws_lambda_function" "hello_world" {
   runtime       = "nodejs12.x"
   filename      = "function.zip"
   memory_size   = 1024 # <<<<< Try changing this to 512 to compare costs
+}
+
+resource "aws_ebs_volume" "gp2_default" {
+  availability_zone = "us-east-1a"
+  size              = 10
 }
